@@ -1,0 +1,20 @@
+﻿@model IEnumerable<MVCMusicStoreApplication.Models.Album>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div style="padding-top:15px">
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>@Html.ActionLink(item.Title, "Details", new { id = item.AlbumId })</li>
+        }
+    </ul>
+</div>
+
+@section Scripts{
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+}
